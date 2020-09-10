@@ -1,34 +1,24 @@
 (ns app.core
-  (:require [reagent.core :as r]))
+  (:require
+   [reagent.dom :as rdom]
+   [re-frame.core :refer [dispatch] :as rf]
+   [app.reframe.events]
+   [app.reframe.subs]
+   [app.components.input :refer [todo-input]]
+   [app.components.list :refer [todo-list]]))
 
-(defn counter []
-  (let [c (r/atom 0)]
-    (fn []
-      [:div.counter
-       [:button.btn
-        {:on-click (fn [] (swap! c dec))}
-        "-"]
-       [:span
-        {:style {:font-size "40px"
-                 :margin "10px"}}
-        @c]
-       [:button.btn
-        {:on-click (fn [] (swap! c inc))}
-        "+"]])))
-
-(defn hello []
-  [:div
-   {:style {:text-align "center"}}
-   [:h1 "안녕하세요!"]
-   [:p "Clojurescript의 reagent(react)를 이용하여 렌더링 합니다."]
-
-   [:h2 "Counter 예제"]
-   [counter]])
+(defn app []
+  [:div.todos-container
+   [:h1 "투두리스트"]
+   [:div
+    [todo-input]]
+   [todo-list]])
 
 (defn ^:dev/after-load render
   "Render the toplevel component for this app."
   []
-  (reagent.dom/render [hello] (.getElementById js/document "app")))
+  (dispatch [:initialize])
+  (rdom/render [app] (.getElementById js/document "app")))
 
 (defn ^:export main
   "Run application startup logic."

@@ -6,7 +6,8 @@
         :output-dir "public/js"
         :target :browser}}
  :dependencies [[binaryage/devtools "0.9.10"]
-                [reagent "0.10.0"]]
+                [reagent "1.0.0-alpha2"]
+                [re-frame "1.1.1"]]
  :dev-http {3000 "public"}
  :nrepl {:port 3333}
  :source-paths ["src"]}
