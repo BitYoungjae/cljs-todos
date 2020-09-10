@@ -1,26 +1,14 @@
-## cljs-skeleton
+# cljs-todos
 
-Clojurescript 시작하기
+클로저스크립트, reagent, reframe 으로 만든 투두리스트
 
-### 시작하기
+## 실행
 
-```
+```sh
 npm i
 npm start
 ```
 
-localhost:3000으로 서버가 실행되며, `src/app/core.cljs`파일을 수정하거나 `public/css/style.css`파일을 수정하면 Hot-reload됩니다.
+## demo
 
-### Editor
-
-- [calva](https://calva.io/) : VSCode 플러그인
-
-### Library
-
-- [shadow-cljs](http://shadow-cljs.org/) : cljs 빌드툴
-- [reagent](https://reagent-project.github.io/) : React.js wrapper
-
-### Note
-
-- [re-frame](https://github.com/day8/re-frame) : reagent 데이터 관리 library
-- [ClojureDocs](https://clojuredocs.org/) : clojure의 다양한 core함수의 예제와 설명을 볼수 있습니다.
+[http://cljs-todos.surge.sh](http://cljs-todos.surge.sh)
